@@ -160,7 +160,7 @@ use OpenApi\Annotations as OA;
  * @OA\Delete(
  *  path="/api/user/{userId}",
  *  tags={"Usuário autenticado"},
- *  summary="Logout",
+ *  summary="Destroy",
  *  security={{"jwt":{}}},
  * @OA\Parameter(
  *   name="userId",

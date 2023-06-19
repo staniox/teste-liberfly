@@ -305,14 +305,23 @@
                         "jwt": []
                     }
                 ]
-            }
-        },
-        "/api/auth/logout": {
-            "post": {
+            },
+            "delete": {
                 "tags": [
                     "Usuário autenticado"
                 ],
-                "summary": "Logout",
+                "summary": "Destroy",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "Id do usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -322,7 +331,7 @@
                                     "properties": {
                                         "message": {
                                             "type": "string",
-                                            "example": "usuário registrado com sucesso"
+                                            "example": "usuário excluido com sucesso"
                                         }
                                     },
                                     "type": "object"
@@ -354,23 +363,12 @@
                 ]
             }
         },
-        "/api/auth/user/{userId}": {
-            "delete": {
+        "/api/auth/logout": {
+            "post": {
                 "tags": [
                     "Usuário autenticado"
                 ],
                 "summary": "Logout",
-                "parameters": [
-                    {
-                        "name": "userId",
-                        "in": "path",
-                        "description": "Id do usuario",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -380,7 +378,7 @@
                                     "properties": {
                                         "message": {
                                             "type": "string",
-                                            "example": "usuário excluido com sucesso"
+                                            "example": "usuário registrado com sucesso"
                                         }
                                     },
                                     "type": "object"
