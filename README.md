@@ -25,6 +25,11 @@ vamos criar nosso arquivo .env a partir do modelo:
  cp .env.example .env
 ```
 
+Agora vamos buildar e subir o docker:
+
+```bash
+./vendor/bin/sail build && ./vendor/bin/sail up -d
+```
 execute o comando para gerar a secret key e a app key
 
 ```bash
@@ -32,11 +37,6 @@ execute o comando para gerar a secret key e a app key
  ./vendor/bin/sail  artisan key:generate
 ```
 
-Agora vamos buildar e subir o docker:
-
-```bash
-./vendor/bin/sail build && ./vendor/bin/sail up -d
-```
 Para Executar as migrations do banco:
 ```bash
 ./vendor/bin/sail artisan migrate
